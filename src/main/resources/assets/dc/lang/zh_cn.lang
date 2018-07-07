@@ -1,0 +1,12 @@
+itemGroup.dc=基因工艺
+item.BioMicrocapsuleNull.iron.name=铁质胶囊(空)
+item.BioMicrocapsuleNull.gold.name=黄金胶囊(空)
+item.BioMicrocapsuleNull.diamond.name=钻石胶囊(空)
+
+item.BioMicrocapsuleNutrient.iron.name=铁质胶囊(营养素)
+item.BioMicrocapsuleNutrient.gold.name=黄金胶囊(营养素)
+item.BioMicrocapsuleNutrient.diamond.name=钻石胶囊(营养素)
+
+item.BioMicrocapsuleCapture.iron.name=铁质胶囊(捕获)
+item.BioMicrocapsuleCapture.gold.name=黄金胶囊(捕获)
+item.BioMicrocapsuleCapture.diamond.name=钻石胶囊(捕获)

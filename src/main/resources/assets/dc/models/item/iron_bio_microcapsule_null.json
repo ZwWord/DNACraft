@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "dc:items/iron_bio_microcapsule_null"
+    }
+}

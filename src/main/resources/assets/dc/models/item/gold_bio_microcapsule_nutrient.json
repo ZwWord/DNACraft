@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "dc:items/gold_bio_microcapsule_nutrient"
+    }
+}

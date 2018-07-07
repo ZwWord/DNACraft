@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dc",
+  "name": "DNA Craft",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Gzz_lin"],
+  "credits": "Gzz_lin",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

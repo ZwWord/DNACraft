@@ -1,0 +1,22 @@
+{
+    "bio_microcapsule_throw": {
+        "sounds": [ 
+            "dc:bio_microcapsule_throw" 
+        ] 
+    },
+    "bio_microcapsule_broken": {
+        "sounds": [ 
+            "dc:bio_microcapsule_broken" 
+        ] 
+    },
+    "bio_microcapsule_capture": {
+        "sounds": [ 
+            "dc:bio_microcapsule_capture" 
+        ] 
+    },
+    "bio_microcapsule_open": {
+        "sounds": [ 
+            "dc:bio_microcapsule_open" 
+        ] 
+    }
+}
