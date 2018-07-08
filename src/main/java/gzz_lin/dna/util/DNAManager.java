@@ -91,14 +91,5 @@ public final class DNAManager {
 		return (HashSet<DNA>) DNA.clone();
 	}
 
-	public static void updata(EntityPlayerMP player) {
-		if (player.hasCapability(CapablilityLoader.dna, null)) {
-			DNAMessage message = new DNAMessage();
-			IStorage<IDNACapability> storage = CapablilityLoader.dna.getStorage();
-			IDNACapability dnaCapability = player.getCapability(CapablilityLoader.dna, null);
-			message.ntb = new NBTTagCompound();
-			message.ntb.setTag("dna", storage.writeNBT(CapablilityLoader.dna, dnaCapability, null));
-			NetWorkLoader.c.sendTo(message, player);
-		}
-	}
+
 }

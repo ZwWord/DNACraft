@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "dc:sulphur_sand" },
+            { "model": "dc:sulphur_sand", "y": 90 },
+            { "model": "dc:sulphur_sand", "y": 180 },
+            { "model": "dc:sulphur_sand", "y": 270 }
+        ]
+    }
+}

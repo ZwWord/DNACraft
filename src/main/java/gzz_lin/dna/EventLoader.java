@@ -3,10 +3,11 @@ package gzz_lin.dna;
 import gzz_lin.dna.capability.CapablilityLoader;
 import gzz_lin.dna.capability.DNAProvider;
 import gzz_lin.dna.capability.IDNACapability;
-import gzz_lin.dna.item.DNAItems;
 import gzz_lin.dna.util.AnnotationUtil;
 import gzz_lin.dna.util.BMUtil;
+import gzz_lin.dna.util.CapabilityUtil;
 import gzz_lin.dna.util.DNAManager;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -22,6 +23,7 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -65,18 +67,24 @@ public class EventLoader {
 		if (event.getEntity() instanceof EntityPlayerMP
 				&& event.getEntity().hasCapability(CapablilityLoader.dna, null)) {
 			EntityPlayerMP player = (EntityPlayerMP) event.getEntity();
-			DNAManager.updata(player);
+			CapabilityUtil.updata(player);
 		}
 	}
 
 	// 注册物品
 	@SubscribeEvent
-	public void onRegistyItem(RegistryEvent.Register<Item> event)
-			throws IllegalArgumentException, IllegalAccessException {
+	public void onRegistyItem(RegistryEvent.Register<Item> event) {
 		IForgeRegistry<Item> registry = event.getRegistry();
-		AnnotationUtil.registerItems(new DNAItems(), registry);
+		AnnotationUtil.registryItems(registry);
+		
 	}
-
+	// 注册方块
+		@SubscribeEvent
+		public void onRegistyBlock(RegistryEvent.Register<Block> event) {
+			IForgeRegistry<Block> registry = event.getRegistry();
+			AnnotationUtil.registryBlocks(registry);
+			
+		}
 	// 绘制物品详细信息
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
@@ -84,4 +92,5 @@ public class EventLoader {
 		BMUtil.renderTooltip(event);
 
 	}
+	
 }

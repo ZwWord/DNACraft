@@ -44,6 +44,7 @@ public class DNACraft
     {
         logger = event.getModLog();
         MinecraftForge.EVENT_BUS.register(new EventLoader());
+        MinecraftForge.ORE_GEN_BUS.register(new OreGenEventLoader());
         new CapablilityLoader();
         new NetWorkLoader();
         new EntityLoader();

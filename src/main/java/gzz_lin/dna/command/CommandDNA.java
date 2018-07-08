@@ -7,6 +7,7 @@ import java.util.List;
 import gzz_lin.dna.capability.CapablilityLoader;
 import gzz_lin.dna.capability.IDNACapability;
 import gzz_lin.dna.model.DNA;
+import gzz_lin.dna.util.CapabilityUtil;
 import gzz_lin.dna.util.DNAManager;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -91,7 +92,7 @@ public class CommandDNA extends CommandBase {
 				}else {
 					capability.addDNA(dna, value);
 				}
-				DNAManager.updata((EntityPlayerMP)player);
+				CapabilityUtil.updata((EntityPlayerMP)player);
 			}
 			else if("get".equals(args[0])) {
 				if(capability.hasDNA(dna)) {
