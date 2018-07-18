@@ -14,4 +14,5 @@ public @interface RegisterBlock {
  boolean registryItemBlock() default false;
  String[] oreDictionaries() default {};
  String modid() default DNACraft.MODID;
+ String unlocalizedName();
 }

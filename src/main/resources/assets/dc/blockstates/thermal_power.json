@@ -1,0 +1,25 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "orientable",
+        "textures": {
+            "top": "dc:blocks/thermal_power_side",
+            "side": "dc:blocks/thermal_power_side"
+        }
+    },
+    "variants": {
+        "inventory": [{
+             "textures": { "front": "dc:blocks/thermal_power" }
+        }],
+        "runing": {
+            "true": { "textures": { "front": "dc:blocks/thermal_power_runing" } },
+            "false": { "textures": { "front": "dc:blocks/thermal_power" } }
+        },
+        "facing": {
+            "east": { "y": 90, "uvlock": true },
+            "north": {},
+            "south": { "y": 180, "uvlock": true },
+            "west": { "y": 270, "uvlock": true }
+        }
+    }
+}

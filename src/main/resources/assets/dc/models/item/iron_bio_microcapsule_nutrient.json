@@ -1,5 +1,5 @@
 {
-    "parent": "item/generated",
+    "parent": "dc:item/bio_handheld",
     "textures": {
         "layer0": "dc:items/iron_bio_microcapsule_nutrient"
     }

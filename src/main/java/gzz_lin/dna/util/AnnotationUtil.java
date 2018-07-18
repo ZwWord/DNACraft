@@ -16,6 +16,7 @@ import gzz_lin.dna.model.BlockRegInfo;
 import gzz_lin.dna.model.ItemRegInfo;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -67,9 +68,9 @@ static {
 						int k = mates[i];
 						ModelResourceLocation v;
 						if (modelRess.length != mates.length) {
-							v = new ModelResourceLocation(modid + ":" + regName);
+							v = new ModelResourceLocation(modid + ":" + regName,"inventory");
 						} else {
-							v = new ModelResourceLocation(modid + ":" + modelRess[i]);
+							v = new ModelResourceLocation(modid + ":" + modelRess[i],"inventory");
 						}
 						metaAndModel.put(k, v);
 					}
@@ -94,13 +95,15 @@ static {
 					boolean regItemBlock = regAnno.registryItemBlock();
 					String[] oreDic = regAnno.oreDictionaries();
 					String modid = regAnno.modid();
+					String unName=regAnno.unlocalizedName();
 					Block block = (Block) f.get(obj);
+					block.setUnlocalizedName(unName);
 					BlockRegInfo blockRegInfo = new BlockRegInfo(block, new ResourceLocation(modid + ":" + regName),
 							regItemBlock, oreDic);
 					BLOCKS.add(blockRegInfo);
 					if (regItemBlock) {
 						HashMap<Integer, ModelResourceLocation> re = new HashMap<>();
-						re.put(0, new ModelResourceLocation(modid + ":" + regName));
+						re.put(0, new ModelResourceLocation(modid + ":" + regName,"inventory"));
 						ItemRegInfo itemRegInfo = new ItemRegInfo(new ItemBlock(block),
 								new ResourceLocation(modid + ":" + regName), true, re, oreDic);
 						ITEMS.add(itemRegInfo);

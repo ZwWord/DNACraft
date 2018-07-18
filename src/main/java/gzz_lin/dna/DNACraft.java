@@ -6,8 +6,10 @@ import gzz_lin.dna.capability.CapablilityLoader;
 import gzz_lin.dna.command.CommandDNA;
 import gzz_lin.dna.entity.EntityLoader;
 import gzz_lin.dna.entity.RenderLoader;
+import gzz_lin.dna.inventory.GuiHandlerRegister;
 import gzz_lin.dna.item.DNAItems;
 import gzz_lin.dna.net.NetWorkLoader;
+import gzz_lin.dna.tileentity.TileEntityLoader;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -19,7 +21,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = DNACraft.MODID, name = DNACraft.NAME, version = DNACraft.VERSION)
+@Mod(modid = DNACraft.MODID, name = DNACraft.NAME, version = DNACraft.VERSION,dependencies="after:ic2;required-after:forge@[14.23,)")
 public class DNACraft
 {
     public static final String MODID = "dc";
@@ -33,7 +35,7 @@ public class DNACraft
 		
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(DNAItems.BIO_MICROCAPSULE_NUTRIENT,1,3);
+			return new ItemStack(DNAItems.BIO_MICROCAPSULE_NULL,1,0);
 		}
 	};
 	
@@ -45,10 +47,13 @@ public class DNACraft
         logger = event.getModLog();
         MinecraftForge.EVENT_BUS.register(new EventLoader());
         MinecraftForge.ORE_GEN_BUS.register(new OreGenEventLoader());
+        
         new CapablilityLoader();
         new NetWorkLoader();
         new EntityLoader();
         new RenderLoader();
+        TileEntityLoader.registryAll();
+        GuiHandlerRegister.registryAll();
     }
 
     @EventHandler

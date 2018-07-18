@@ -11,7 +11,6 @@ public class BlockBioEnergyGenerator extends BlockContainer{
 	protected BlockBioEnergyGenerator() {
 		super(Material.IRON);
 		this.setCreativeTab(DNACraft.TAB);
-		this.setUnlocalizedName("BioEnergyGenerator");
 		this.setHardness(5.0f);
 		this.setHarvestLevel("pickaxe", 1);
 	}
